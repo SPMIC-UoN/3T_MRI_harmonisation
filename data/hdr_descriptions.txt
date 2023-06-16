@@ -1,0 +1,1040 @@
+     QC_T1-to-standard_linear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the T1 brain image (linearly-aligned to standard space) and the standard-space brain template "
+     QC_T1-to-standard_nonlinear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the T1 brain image (nonlinearly-aligned to standard space) and the standard-space brain template "
+     QC_T1-to-standard_nonlinear_alignment_warping\tAU\tfloat\tAmount of warping (averaged distortion) applied to nonlinearly align the T1 brain image to standard space "
+     QC_T1_inverse_SNR\tratio\tfloat\tInverted signal-to-noise ratio in the T1 - background-noise spatial standard deviation divided by mean brain intensity "
+     QC_T1_inverse_CNR\tratio\tfloat\tInverted contrast-to-noise ratio in the T1 - background-noise spatial standard deviation divided by contrast between white and grey matter mean intensities "
+     QC_T2_FLAIR-to-T1_linear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the T2_FLAIR brain image (linearly-aligned to the T1) and the T1 brain image "
+     QC_dMRI-to-T1_linear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the (EPI-unwarped b=0) dMRI brain image (linearly-aligned to the T1) and the T1 brain image "
+     QC_SWI-to-T1_linear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the (magnitude) SWI brain image (linearly-aligned to the T1) and the T1 brain image "
+     QC_rfMRI-to-T1_linear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the (EPI-unwarped SBref) rfMRI brain image (linearly-aligned to the T1) and the T1 brain image "
+     QC_tfMRI-to-T1_linear_alignment_discrepancy\tAU\tfloat\tDiscrepancy between the (EPI-unwarped SBref) tfMRI brain image (linearly-aligned to the T1) and the T1 brain image "
+     QC_rfMRI_head_motion\tmm\tfloat\tMean rfMRI head motion, averaged across space and timepoints
+     QC_tfMRI_head_motion\tmm\tfloat\tMean tfMRI head motion, averaged across space and timepoints
+     QC_rfMRI_inverse_tSNR\tratio\tfloat\tInverted temporal signal-to-noise ratio in the pre-processed rfMRI - reciprocal of median (across brain voxels) of voxelwise mean intensity divided by voxelwise timeseries standard deviation
+     QC_rfMRI_cleaned_inverse_tSNR\tratio\tfloat\tInverted temporal signal-to-noise ratio in the artefact-cleaned pre-processed rfMRI - reciprocal of median (across brain voxels) of voxelwise mean intensity divided by voxelwise timeseries standard deviation
+     QC_tfMRI_inverse_tSNR\tratio\tfloat\tInverted temporal signal-to-noise ratio in the pre-processed tfMRI - reciprocal of median (across brain voxels) of voxelwise mean intensity divided by voxelwise timeseries standard deviation
+     QC_dMRI_eddy_outlier_slices\tcount\tint\tNumber of dMRI outlier slices (across all slices in all volumes) detected and corrected
+     IDP_T1_SIENAX_headsize_scaling\tratio\tfloat\tVolumetric scaling from the T1 head image to standard space "
+     IDP_T1_SIENAX_peripheral_grey_normalised_volume\tmm3\tfloat\tVolume of peripheral cortical grey matter (from T1 brain image, normalised for head size) "
+     IDP_T1_SIENAX_peripheral_grey_unnormalised_volume\tmm3\tfloat\tVolume of peripheral cortical grey matter (from T1 brain image) "
+     IDP_T1_SIENAX_CSF_normalised_volume\tmm3\tfloat\tVolume of ventricular cerebrospinal fluid (from T1 brain image, normalised for head size) "
+     IDP_T1_SIENAX_CSF_unnormalised_volume\tmm3\tfloat\tVolume of ventricular cerebrospinal fluid (from T1 brain image) "
+     IDP_T1_SIENAX_grey_normalised_volume\tmm3\tfloat\tVolume of grey matter (from T1 brain image, normalised for head size) "
+     IDP_T1_SIENAX_grey_unnormalised_volume\tmm3\tfloat\tVolume of grey matter (from T1 brain image) "
+     IDP_T1_SIENAX_white_normalised_volume\tmm3\tfloat\tVolume of white matter (from T1 brain image, normalised for head size) "
+     IDP_T1_SIENAX_white_unnormalised_volume\tmm3\tfloat\tVolume of white matter (from T1 brain image) "
+     IDP_T1_SIENAX_brain-normalised_volume\tmm3\tfloat\tVolume of brain (grey+white, from T1 brain image, normalised for head size) "
+     IDP_T1_SIENAX_brain-unnormalised_volume\tmm3\tfloat\tVolume of brain (grey+white, from T1 brain image) "
+     IDP_T1_FIRST_left_thalamus_volume\tmm3\tfloat\tVolume of left thalamus (from T1 brain image) "
+     IDP_T1_FIRST_right_thalamus_volume\tmm3\tfloat\tVolume of right thalamus (from T1 brain image) "
+     IDP_T1_FIRST_left_caudate_volume\tmm3\tfloat\tVolume of left caudate (from T1 brain image) "
+     IDP_T1_FIRST_right_caudate_volume\tmm3\tfloat\tVolume of right caudate (from T1 brain image) "
+     IDP_T1_FIRST_left_putamen_volume\tmm3\tfloat\tVolume of left putamen (from T1 brain image) "
+     IDP_T1_FIRST_right_putamen_volume\tmm3\tfloat\tVolume of right putamen (from T1 brain image) "
+     IDP_T1_FIRST_left_pallidum_volume\tmm3\tfloat\tVolume of left pallidum (from T1 brain image) "
+     IDP_T1_FIRST_right_pallidum_volume\tmm3\tfloat\tVolume of right pallidum (from T1 brain image) "
+     IDP_T1_FIRST_left_hippocampus_volume\tmm3\tfloat\tVolume of left hippocampus (from T1 brain image) "
+     IDP_T1_FIRST_right_hippocampus_volume\tmm3\tfloat\tVolume of right hippocampus (from T1 brain image) "
+     IDP_T1_FIRST_left_amygdala_volume\tmm3\tfloat\tVolume of left amygdala (from T1 brain image) "
+     IDP_T1_FIRST_right_amygdala_volume\tmm3\tfloat\tVolume of right amygdala (from T1 brain image) "
+     IDP_T1_FIRST_left_accumbens_volume\tmm3\tfloat\tVolume of left accumbens (from T1 brain image) "
+     IDP_T1_FIRST_right_accumbens_volume\tmm3\tfloat\tVolume of right accumbens (from T1 brain image) "
+     IDP_T1_FIRST_brain_stem+4th_ventricle_volume\tmm3\tfloat\tVolume of brain stem + 4th ventricle (from T1 brain image) "
+     IDP_SWI_T2star_left_thalamus\tms\tfloat\tMedian T2star in left thalamus (from SWI data) "
+     IDP_SWI_T2star_right_thalamus\tms\tfloat\tMedian T2star in right thalamus (from SWI data) "
+     IDP_SWI_T2star_left_caudate\tms\tfloat\tMedian T2star in left caudate (from SWI data) "
+     IDP_SWI_T2star_right_caudate\tms\tfloat\tMedian T2star in right caudate (from SWI data) "
+     IDP_SWI_T2star_left_putamen\tms\tfloat\tMedian T2star in left putamen (from SWI data) "
+     IDP_SWI_T2star_right_putamen\tms\tfloat\tMedian T2star in right putamen (from SWI data) "
+     IDP_SWI_T2star_left_pallidum\tms\tfloat\tMedian T2star in left pallidum (from SWI data) "
+     IDP_SWI_T2star_right_pallidum\tms\tfloat\tMedian T2star in right pallidum (from SWI data) "
+     IDP_SWI_T2star_left_hippocampus\tms\tfloat\tMedian T2star in left hippocampus (from SWI data) "
+     IDP_SWI_T2star_right_hippocampus\tms\tfloat\tMedian T2star in right hippocampus (from SWI data) "
+     IDP_SWI_T2star_left_amygdala\tms\tfloat\tMedian T2star in left amygdala (from SWI data) "
+     IDP_SWI_T2star_right_amygdala\tms\tfloat\tMedian T2star in right amygdala (from SWI data) "
+     IDP_SWI_T2star_left_accumbens\tms\tfloat\tMedian T2star in left accumbens (from SWI data) "
+     IDP_SWI_T2star_right_accumbens\tms\tfloat\tMedian T2star in right accumbens (from SWI data) "
+     IDP_tfMRI_median_BOLD_shapes\t%\tfloat\tMedian BOLD effect (in group-defined mask) for shapes activation (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_BOLD_shapes\t%\tfloat\t90th percentile of the BOLD effect (in group-defined mask) for shapes activation (in task fMRI data) "
+     IDP_tfMRI_median_zstat_shapes\tZ\tfloat\tMedian z-statistic (in group-defined mask) for shapes activation (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_zstat_shapes\tZ\tfloat\t90th percentile of the z-statistic (in group-defined mask) for shapes activation (in task fMRI data) "
+     IDP_tfMRI_median_BOLD_faces\t%\tfloat\tMedian BOLD effect (in group-defined mask) for faces activation (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_BOLD_faces\t%\tfloat\t90th percentile of the BOLD effect (in group-defined mask) for faces activation (in task fMRI data) "
+     IDP_tfMRI_median_zstat_faces\tZ\tfloat\tMedian z-statistic (in group-defined mask) for faces activation (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_zstat_faces\tZ\tfloat\t90th percentile of the z-statistic (in group-defined mask) for faces activation (in task fMRI data) "
+     IDP_tfMRI_median_BOLD_faces-shapes\t%\tfloat\tMedian BOLD effect (in group-defined mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_BOLD_faces-shapes\t%\tfloat\t90th percentile of the BOLD effect (in group-defined mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_median_zstat_faces-shapes\tZ\tfloat\tMedian z-statistic (in group-defined mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_zstat_faces-shapes\tZ\tfloat\t90th percentile of the z-statistic (in group-defined mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_median_BOLD_faces-shapes_amygdala\t%\tfloat\tMedian BOLD effect (in group-defined amygdala activation mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_BOLD_faces-shapes_amygdala\t%\tfloat\t90th percentile of the BOLD effect (in group-defined amygdala activation mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_median_zstat_faces-shapes_amygdala\tZ\tfloat\tMedian z-statistic (in group-defined amygdala activation mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_tfMRI_90th-percentile_zstat_faces-shapes_amygdala\tZ\tfloat\t90th percentile of the z-statistic (in group-defined amygdala activation mask) for faces-shapes contrast (in task fMRI data) "
+     IDP_dMRI_TBSS_FA_Middle_cerebellar_peduncle\tAU float Mean FA in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Pontine_crossing_tract\tAU float Mean FA in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Genu_of_corpus_callosum\tAU float Mean FA in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Body_of_corpus_callosum\tAU float Mean FA in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Splenium_of_corpus_callosum\tAU float Mean FA in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Fornix\tAU float Mean FA in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Corticospinal_tract_R\tAU float Mean FA in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Corticospinal_tract_L\tAU float Mean FA in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Medial_lemniscus_R\tAU float Mean FA in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Medial_lemniscus_L\tAU float Mean FA in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Inferior_cerebellar_peduncle_R\tAU float Mean FA in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Inferior_cerebellar_peduncle_L\tAU float Mean FA in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_cerebellar_peduncle_R\tAU float Mean FA in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_cerebellar_peduncle_L\tAU float Mean FA in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Cerebral_peduncle_R\tAU float Mean FA in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Cerebral_peduncle_L\tAU float Mean FA in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Anterior_limb_of_internal_capsule_R\tAU float Mean FA in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Anterior_limb_of_internal_capsule_L\tAU float Mean FA in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Posterior_limb_of_internal_capsule_R\tAU float Mean FA in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Posterior_limb_of_internal_capsule_L\tAU float Mean FA in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Retrolenticular_part_of_internal_capsule_R\tAU float Mean FA in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Retrolenticular_part_of_internal_capsule_L\tAU float Mean FA in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Anterior_corona_radiata_R\tAU float Mean FA in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Anterior_corona_radiata_L\tAU float Mean FA in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_corona_radiata_R\tAU float Mean FA in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_corona_radiata_L\tAU float Mean FA in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Posterior_corona_radiata_R\tAU float Mean FA in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Posterior_corona_radiata_L\tAU float Mean FA in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Posterior_thalamic_radiation_R\tAU float Mean FA in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Posterior_thalamic_radiation_L\tAU float Mean FA in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Sagittal_stratum_R\tAU float Mean FA in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Sagittal_stratum_L\tAU float Mean FA in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_External_capsule_R\tAU float Mean FA in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_External_capsule_L\tAU float Mean FA in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Cingulum_cingulate_gyrus_R\tAU float Mean FA in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Cingulum_cingulate_gyrus_L\tAU float Mean FA in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Cingulum_hippocampus_R\tAU float Mean FA in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Cingulum_hippocampus_L\tAU float Mean FA in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Fornix_cres+Stria_terminalis_R\tAU float Mean FA in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Fornix_cres+Stria_terminalis_L\tAU float Mean FA in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_longitudinal_fasciculus_R\tAU float Mean FA in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_longitudinal_fasciculus_L\tAU float Mean FA in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_fronto-occipital_fasciculus_R\tAU float Mean FA in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Superior_fronto-occipital_fasciculus_L\tAU float Mean FA in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Uncinate_fasciculus_R\tAU float Mean FA in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Uncinate_fasciculus_L\tAU float Mean FA in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Tapetum_R\tAU float Mean FA in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_FA_Tapetum_L\tAU float Mean FA in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Middle_cerebellar_peduncle\tAU float Mean MD in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Pontine_crossing_tract\tAU float Mean MD in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Genu_of_corpus_callosum\tAU float Mean MD in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Body_of_corpus_callosum\tAU float Mean MD in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Splenium_of_corpus_callosum\tAU float Mean MD in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Fornix\tAU float Mean MD in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Corticospinal_tract_R\tAU float Mean MD in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Corticospinal_tract_L\tAU float Mean MD in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Medial_lemniscus_R\tAU float Mean MD in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Medial_lemniscus_L\tAU float Mean MD in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Inferior_cerebellar_peduncle_R\tAU float Mean MD in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Inferior_cerebellar_peduncle_L\tAU float Mean MD in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_cerebellar_peduncle_R\tAU float Mean MD in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_cerebellar_peduncle_L\tAU float Mean MD in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Cerebral_peduncle_R\tAU float Mean MD in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Cerebral_peduncle_L\tAU float Mean MD in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Anterior_limb_of_internal_capsule_R\tAU float Mean MD in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Anterior_limb_of_internal_capsule_L\tAU float Mean MD in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Posterior_limb_of_internal_capsule_R\tAU float Mean MD in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Posterior_limb_of_internal_capsule_L\tAU float Mean MD in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Retrolenticular_part_of_internal_capsule_R\tAU float Mean MD in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Retrolenticular_part_of_internal_capsule_L\tAU float Mean MD in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Anterior_corona_radiata_R\tAU float Mean MD in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Anterior_corona_radiata_L\tAU float Mean MD in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_corona_radiata_R\tAU float Mean MD in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_corona_radiata_L\tAU float Mean MD in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Posterior_corona_radiata_R\tAU float Mean MD in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Posterior_corona_radiata_L\tAU float Mean MD in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Posterior_thalamic_radiation_R\tAU float Mean MD in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Posterior_thalamic_radiation_L\tAU float Mean MD in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Sagittal_stratum_R\tAU float Mean MD in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Sagittal_stratum_L\tAU float Mean MD in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_External_capsule_R\tAU float Mean MD in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_External_capsule_L\tAU float Mean MD in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Cingulum_cingulate_gyrus_R\tAU float Mean MD in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Cingulum_cingulate_gyrus_L\tAU float Mean MD in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Cingulum_hippocampus_R\tAU float Mean MD in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Cingulum_hippocampus_L\tAU float Mean MD in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Fornix_cres+Stria_terminalis_R\tAU float Mean MD in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Fornix_cres+Stria_terminalis_L\tAU float Mean MD in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_longitudinal_fasciculus_R\tAU float Mean MD in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_longitudinal_fasciculus_L\tAU float Mean MD in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_fronto-occipital_fasciculus_R\tAU float Mean MD in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Superior_fronto-occipital_fasciculus_L\tAU float Mean MD in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Uncinate_fasciculus_R\tAU float Mean MD in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Uncinate_fasciculus_L\tAU float Mean MD in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Tapetum_R\tAU float Mean MD in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MD_Tapetum_L\tAU float Mean MD in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Middle_cerebellar_peduncle\tAU float Mean MO in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Pontine_crossing_tract\tAU float Mean MO in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Genu_of_corpus_callosum\tAU float Mean MO in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Body_of_corpus_callosum\tAU float Mean MO in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Splenium_of_corpus_callosum\tAU float Mean MO in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Fornix\tAU float Mean MO in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Corticospinal_tract_R\tAU float Mean MO in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Corticospinal_tract_L\tAU float Mean MO in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Medial_lemniscus_R\tAU float Mean MO in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Medial_lemniscus_L\tAU float Mean MO in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Inferior_cerebellar_peduncle_R\tAU float Mean MO in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Inferior_cerebellar_peduncle_L\tAU float Mean MO in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_cerebellar_peduncle_R\tAU float Mean MO in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_cerebellar_peduncle_L\tAU float Mean MO in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Cerebral_peduncle_R\tAU float Mean MO in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Cerebral_peduncle_L\tAU float Mean MO in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Anterior_limb_of_internal_capsule_R\tAU float Mean MO in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Anterior_limb_of_internal_capsule_L\tAU float Mean MO in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Posterior_limb_of_internal_capsule_R\tAU float Mean MO in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Posterior_limb_of_internal_capsule_L\tAU float Mean MO in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Retrolenticular_part_of_internal_capsule_R\tAU float Mean MO in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Retrolenticular_part_of_internal_capsule_L\tAU float Mean MO in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Anterior_corona_radiata_R\tAU float Mean MO in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Anterior_corona_radiata_L\tAU float Mean MO in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_corona_radiata_R\tAU float Mean MO in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_corona_radiata_L\tAU float Mean MO in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Posterior_corona_radiata_R\tAU float Mean MO in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Posterior_corona_radiata_L\tAU float Mean MO in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Posterior_thalamic_radiation_R\tAU float Mean MO in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Posterior_thalamic_radiation_L\tAU float Mean MO in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Sagittal_stratum_R\tAU float Mean MO in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Sagittal_stratum_L\tAU float Mean MO in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_External_capsule_R\tAU float Mean MO in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_External_capsule_L\tAU float Mean MO in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Cingulum_cingulate_gyrus_R\tAU float Mean MO in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Cingulum_cingulate_gyrus_L\tAU float Mean MO in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Cingulum_hippocampus_R\tAU float Mean MO in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Cingulum_hippocampus_L\tAU float Mean MO in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Fornix_cres+Stria_terminalis_R\tAU float Mean MO in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Fornix_cres+Stria_terminalis_L\tAU float Mean MO in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_longitudinal_fasciculus_R\tAU float Mean MO in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_longitudinal_fasciculus_L\tAU float Mean MO in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_fronto-occipital_fasciculus_R\tAU float Mean MO in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Superior_fronto-occipital_fasciculus_L\tAU float Mean MO in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Uncinate_fasciculus_R\tAU float Mean MO in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Uncinate_fasciculus_L\tAU float Mean MO in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Tapetum_R\tAU float Mean MO in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_MO_Tapetum_L\tAU float Mean MO in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Middle_cerebellar_peduncle\tAU float Mean L1 in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Pontine_crossing_tract\tAU float Mean L1 in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Genu_of_corpus_callosum\tAU float Mean L1 in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Body_of_corpus_callosum\tAU float Mean L1 in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Splenium_of_corpus_callosum\tAU float Mean L1 in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Fornix\tAU float Mean L1 in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Corticospinal_tract_R\tAU float Mean L1 in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Corticospinal_tract_L\tAU float Mean L1 in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Medial_lemniscus_R\tAU float Mean L1 in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Medial_lemniscus_L\tAU float Mean L1 in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Inferior_cerebellar_peduncle_R\tAU float Mean L1 in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Inferior_cerebellar_peduncle_L\tAU float Mean L1 in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_cerebellar_peduncle_R\tAU float Mean L1 in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_cerebellar_peduncle_L\tAU float Mean L1 in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Cerebral_peduncle_R\tAU float Mean L1 in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Cerebral_peduncle_L\tAU float Mean L1 in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Anterior_limb_of_internal_capsule_R\tAU float Mean L1 in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Anterior_limb_of_internal_capsule_L\tAU float Mean L1 in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Posterior_limb_of_internal_capsule_R\tAU float Mean L1 in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Posterior_limb_of_internal_capsule_L\tAU float Mean L1 in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Retrolenticular_part_of_internal_capsule_R\tAU float Mean L1 in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Retrolenticular_part_of_internal_capsule_L\tAU float Mean L1 in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Anterior_corona_radiata_R\tAU float Mean L1 in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Anterior_corona_radiata_L\tAU float Mean L1 in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_corona_radiata_R\tAU float Mean L1 in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_corona_radiata_L\tAU float Mean L1 in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Posterior_corona_radiata_R\tAU float Mean L1 in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Posterior_corona_radiata_L\tAU float Mean L1 in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Posterior_thalamic_radiation_R\tAU float Mean L1 in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Posterior_thalamic_radiation_L\tAU float Mean L1 in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Sagittal_stratum_R\tAU float Mean L1 in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Sagittal_stratum_L\tAU float Mean L1 in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_External_capsule_R\tAU float Mean L1 in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_External_capsule_L\tAU float Mean L1 in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Cingulum_cingulate_gyrus_R\tAU float Mean L1 in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Cingulum_cingulate_gyrus_L\tAU float Mean L1 in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Cingulum_hippocampus_R\tAU float Mean L1 in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Cingulum_hippocampus_L\tAU float Mean L1 in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Fornix_cres+Stria_terminalis_R\tAU float Mean L1 in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Fornix_cres+Stria_terminalis_L\tAU float Mean L1 in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_longitudinal_fasciculus_R\tAU float Mean L1 in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_longitudinal_fasciculus_L\tAU float Mean L1 in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_fronto-occipital_fasciculus_R\tAU float Mean L1 in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Superior_fronto-occipital_fasciculus_L\tAU float Mean L1 in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Uncinate_fasciculus_R\tAU float Mean L1 in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Uncinate_fasciculus_L\tAU float Mean L1 in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Tapetum_R\tAU float Mean L1 in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L1_Tapetum_L\tAU float Mean L1 in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Middle_cerebellar_peduncle\tAU float Mean L2 in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Pontine_crossing_tract\tAU float Mean L2 in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Genu_of_corpus_callosum\tAU float Mean L2 in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Body_of_corpus_callosum\tAU float Mean L2 in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Splenium_of_corpus_callosum\tAU float Mean L2 in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Fornix\tAU float Mean L2 in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Corticospinal_tract_R\tAU float Mean L2 in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Corticospinal_tract_L\tAU float Mean L2 in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Medial_lemniscus_R\tAU float Mean L2 in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Medial_lemniscus_L\tAU float Mean L2 in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Inferior_cerebellar_peduncle_R\tAU float Mean L2 in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Inferior_cerebellar_peduncle_L\tAU float Mean L2 in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_cerebellar_peduncle_R\tAU float Mean L2 in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_cerebellar_peduncle_L\tAU float Mean L2 in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Cerebral_peduncle_R\tAU float Mean L2 in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Cerebral_peduncle_L\tAU float Mean L2 in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Anterior_limb_of_internal_capsule_R\tAU float Mean L2 in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Anterior_limb_of_internal_capsule_L\tAU float Mean L2 in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Posterior_limb_of_internal_capsule_R\tAU float Mean L2 in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Posterior_limb_of_internal_capsule_L\tAU float Mean L2 in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Retrolenticular_part_of_internal_capsule_R\tAU float Mean L2 in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Retrolenticular_part_of_internal_capsule_L\tAU float Mean L2 in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Anterior_corona_radiata_R\tAU float Mean L2 in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Anterior_corona_radiata_L\tAU float Mean L2 in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_corona_radiata_R\tAU float Mean L2 in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_corona_radiata_L\tAU float Mean L2 in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Posterior_corona_radiata_R\tAU float Mean L2 in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Posterior_corona_radiata_L\tAU float Mean L2 in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Posterior_thalamic_radiation_R\tAU float Mean L2 in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Posterior_thalamic_radiation_L\tAU float Mean L2 in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Sagittal_stratum_R\tAU float Mean L2 in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Sagittal_stratum_L\tAU float Mean L2 in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_External_capsule_R\tAU float Mean L2 in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_External_capsule_L\tAU float Mean L2 in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Cingulum_cingulate_gyrus_R\tAU float Mean L2 in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Cingulum_cingulate_gyrus_L\tAU float Mean L2 in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Cingulum_hippocampus_R\tAU float Mean L2 in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Cingulum_hippocampus_L\tAU float Mean L2 in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Fornix_cres+Stria_terminalis_R\tAU float Mean L2 in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Fornix_cres+Stria_terminalis_L\tAU float Mean L2 in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_longitudinal_fasciculus_R\tAU float Mean L2 in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_longitudinal_fasciculus_L\tAU float Mean L2 in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_fronto-occipital_fasciculus_R\tAU float Mean L2 in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Superior_fronto-occipital_fasciculus_L\tAU float Mean L2 in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Uncinate_fasciculus_R\tAU float Mean L2 in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Uncinate_fasciculus_L\tAU float Mean L2 in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Tapetum_R\tAU float Mean L2 in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L2_Tapetum_L\tAU float Mean L2 in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Middle_cerebellar_peduncle\tAU float Mean L3 in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Pontine_crossing_tract\tAU float Mean L3 in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Genu_of_corpus_callosum\tAU float Mean L3 in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Body_of_corpus_callosum\tAU float Mean L3 in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Splenium_of_corpus_callosum\tAU float Mean L3 in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Fornix\tAU float Mean L3 in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Corticospinal_tract_R\tAU float Mean L3 in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Corticospinal_tract_L\tAU float Mean L3 in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Medial_lemniscus_R\tAU float Mean L3 in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Medial_lemniscus_L\tAU float Mean L3 in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Inferior_cerebellar_peduncle_R\tAU float Mean L3 in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Inferior_cerebellar_peduncle_L\tAU float Mean L3 in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_cerebellar_peduncle_R\tAU float Mean L3 in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_cerebellar_peduncle_L\tAU float Mean L3 in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Cerebral_peduncle_R\tAU float Mean L3 in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Cerebral_peduncle_L\tAU float Mean L3 in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Anterior_limb_of_internal_capsule_R\tAU float Mean L3 in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Anterior_limb_of_internal_capsule_L\tAU float Mean L3 in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Posterior_limb_of_internal_capsule_R\tAU float Mean L3 in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Posterior_limb_of_internal_capsule_L\tAU float Mean L3 in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Retrolenticular_part_of_internal_capsule_R\tAU float Mean L3 in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Retrolenticular_part_of_internal_capsule_L\tAU float Mean L3 in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Anterior_corona_radiata_R\tAU float Mean L3 in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Anterior_corona_radiata_L\tAU float Mean L3 in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_corona_radiata_R\tAU float Mean L3 in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_corona_radiata_L\tAU float Mean L3 in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Posterior_corona_radiata_R\tAU float Mean L3 in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Posterior_corona_radiata_L\tAU float Mean L3 in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Posterior_thalamic_radiation_R\tAU float Mean L3 in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Posterior_thalamic_radiation_L\tAU float Mean L3 in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Sagittal_stratum_R\tAU float Mean L3 in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Sagittal_stratum_L\tAU float Mean L3 in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_External_capsule_R\tAU float Mean L3 in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_External_capsule_L\tAU float Mean L3 in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Cingulum_cingulate_gyrus_R\tAU float Mean L3 in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Cingulum_cingulate_gyrus_L\tAU float Mean L3 in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Cingulum_hippocampus_R\tAU float Mean L3 in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Cingulum_hippocampus_L\tAU float Mean L3 in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Fornix_cres+Stria_terminalis_R\tAU float Mean L3 in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Fornix_cres+Stria_terminalis_L\tAU float Mean L3 in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_longitudinal_fasciculus_R\tAU float Mean L3 in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_longitudinal_fasciculus_L\tAU float Mean L3 in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_fronto-occipital_fasciculus_R\tAU float Mean L3 in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Superior_fronto-occipital_fasciculus_L\tAU float Mean L3 in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Uncinate_fasciculus_R\tAU float Mean L3 in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Uncinate_fasciculus_L\tAU float Mean L3 in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Tapetum_R\tAU float Mean L3 in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_L3_Tapetum_L\tAU float Mean L3 in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Middle_cerebellar_peduncle\tAU float Mean ICVF in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Pontine_crossing_tract\tAU float Mean ICVF in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Genu_of_corpus_callosum\tAU float Mean ICVF in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Body_of_corpus_callosum\tAU float Mean ICVF in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Splenium_of_corpus_callosum\tAU float Mean ICVF in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Fornix\tAU float Mean ICVF in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Corticospinal_tract_R\tAU float Mean ICVF in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Corticospinal_tract_L\tAU float Mean ICVF in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Medial_lemniscus_R\tAU float Mean ICVF in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Medial_lemniscus_L\tAU float Mean ICVF in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Inferior_cerebellar_peduncle_R\tAU float Mean ICVF in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Inferior_cerebellar_peduncle_L\tAU float Mean ICVF in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_cerebellar_peduncle_R\tAU float Mean ICVF in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_cerebellar_peduncle_L\tAU float Mean ICVF in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Cerebral_peduncle_R\tAU float Mean ICVF in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Cerebral_peduncle_L\tAU float Mean ICVF in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Anterior_limb_of_internal_capsule_R\tAU float Mean ICVF in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Anterior_limb_of_internal_capsule_L\tAU float Mean ICVF in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Posterior_limb_of_internal_capsule_R\tAU float Mean ICVF in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Posterior_limb_of_internal_capsule_L\tAU float Mean ICVF in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Retrolenticular_part_of_internal_capsule_R\tAU float Mean ICVF in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Retrolenticular_part_of_internal_capsule_L\tAU float Mean ICVF in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Anterior_corona_radiata_R\tAU float Mean ICVF in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Anterior_corona_radiata_L\tAU float Mean ICVF in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_corona_radiata_R\tAU float Mean ICVF in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_corona_radiata_L\tAU float Mean ICVF in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Posterior_corona_radiata_R\tAU float Mean ICVF in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Posterior_corona_radiata_L\tAU float Mean ICVF in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Posterior_thalamic_radiation_R\tAU float Mean ICVF in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Posterior_thalamic_radiation_L\tAU float Mean ICVF in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Sagittal_stratum_R\tAU float Mean ICVF in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Sagittal_stratum_L\tAU float Mean ICVF in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_External_capsule_R\tAU float Mean ICVF in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_External_capsule_L\tAU float Mean ICVF in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Cingulum_cingulate_gyrus_R\tAU float Mean ICVF in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Cingulum_cingulate_gyrus_L\tAU float Mean ICVF in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Cingulum_hippocampus_R\tAU float Mean ICVF in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Cingulum_hippocampus_L\tAU float Mean ICVF in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Fornix_cres+Stria_terminalis_R\tAU float Mean ICVF in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Fornix_cres+Stria_terminalis_L\tAU float Mean ICVF in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_longitudinal_fasciculus_R\tAU float Mean ICVF in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_longitudinal_fasciculus_L\tAU float Mean ICVF in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_fronto-occipital_fasciculus_R\tAU float Mean ICVF in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Superior_fronto-occipital_fasciculus_L\tAU float Mean ICVF in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Uncinate_fasciculus_R\tAU float Mean ICVF in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Uncinate_fasciculus_L\tAU float Mean ICVF in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Tapetum_R\tAU float Mean ICVF in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ICVF_Tapetum_L\tAU float Mean ICVF in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Middle_cerebellar_peduncle\tAU float Mean OD in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Pontine_crossing_tract\tAU float Mean OD in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Genu_of_corpus_callosum\tAU float Mean OD in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Body_of_corpus_callosum\tAU float Mean OD in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Splenium_of_corpus_callosum\tAU float Mean OD in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Fornix\tAU float Mean OD in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Corticospinal_tract_R\tAU float Mean OD in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Corticospinal_tract_L\tAU float Mean OD in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Medial_lemniscus_R\tAU float Mean OD in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Medial_lemniscus_L\tAU float Mean OD in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Inferior_cerebellar_peduncle_R\tAU float Mean OD in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Inferior_cerebellar_peduncle_L\tAU float Mean OD in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_cerebellar_peduncle_R\tAU float Mean OD in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_cerebellar_peduncle_L\tAU float Mean OD in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Cerebral_peduncle_R\tAU float Mean OD in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Cerebral_peduncle_L\tAU float Mean OD in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Anterior_limb_of_internal_capsule_R\tAU float Mean OD in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Anterior_limb_of_internal_capsule_L\tAU float Mean OD in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Posterior_limb_of_internal_capsule_R\tAU float Mean OD in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Posterior_limb_of_internal_capsule_L\tAU float Mean OD in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Retrolenticular_part_of_internal_capsule_R\tAU float Mean OD in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Retrolenticular_part_of_internal_capsule_L\tAU float Mean OD in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Anterior_corona_radiata_R\tAU float Mean OD in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Anterior_corona_radiata_L\tAU float Mean OD in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_corona_radiata_R\tAU float Mean OD in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_corona_radiata_L\tAU float Mean OD in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Posterior_corona_radiata_R\tAU float Mean OD in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Posterior_corona_radiata_L\tAU float Mean OD in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Posterior_thalamic_radiation_R\tAU float Mean OD in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Posterior_thalamic_radiation_L\tAU float Mean OD in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Sagittal_stratum_R\tAU float Mean OD in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Sagittal_stratum_L\tAU float Mean OD in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_External_capsule_R\tAU float Mean OD in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_External_capsule_L\tAU float Mean OD in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Cingulum_cingulate_gyrus_R\tAU float Mean OD in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Cingulum_cingulate_gyrus_L\tAU float Mean OD in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Cingulum_hippocampus_R\tAU float Mean OD in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Cingulum_hippocampus_L\tAU float Mean OD in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Fornix_cres+Stria_terminalis_R\tAU float Mean OD in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Fornix_cres+Stria_terminalis_L\tAU float Mean OD in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_longitudinal_fasciculus_R\tAU float Mean OD in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_longitudinal_fasciculus_L\tAU float Mean OD in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_fronto-occipital_fasciculus_R\tAU float Mean OD in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Superior_fronto-occipital_fasciculus_L\tAU float Mean OD in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Uncinate_fasciculus_R\tAU float Mean OD in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Uncinate_fasciculus_L\tAU float Mean OD in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Tapetum_R\tAU float Mean OD in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_OD_Tapetum_L\tAU float Mean OD in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Middle_cerebellar_peduncle\tAU float Mean ISOVF in middle cerebellar peduncle on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Pontine_crossing_tract\tAU float Mean ISOVF in pontine crossing tract on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Genu_of_corpus_callosum\tAU float Mean ISOVF in genu of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Body_of_corpus_callosum\tAU float Mean ISOVF in body of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Splenium_of_corpus_callosum\tAU float Mean ISOVF in splenium of corpus callosum on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Fornix\tAU float Mean ISOVF in fornix on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Corticospinal_tract_R\tAU float Mean ISOVF in corticospinal tract (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Corticospinal_tract_L\tAU float Mean ISOVF in corticospinal tract (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Medial_lemniscus_R\tAU float Mean ISOVF in medial lemniscus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Medial_lemniscus_L\tAU float Mean ISOVF in medial lemniscus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Inferior_cerebellar_peduncle_R\tAU float Mean ISOVF in inferior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Inferior_cerebellar_peduncle_L\tAU float Mean ISOVF in inferior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_cerebellar_peduncle_R\tAU float Mean ISOVF in superior cerebellar peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_cerebellar_peduncle_L\tAU float Mean ISOVF in superior cerebellar peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Cerebral_peduncle_R\tAU float Mean ISOVF in cerebral peduncle (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Cerebral_peduncle_L\tAU float Mean ISOVF in cerebral peduncle (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Anterior_limb_of_internal_capsule_R\tAU float Mean ISOVF in anterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Anterior_limb_of_internal_capsule_L\tAU float Mean ISOVF in anterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Posterior_limb_of_internal_capsule_R\tAU float Mean ISOVF in posterior limb of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Posterior_limb_of_internal_capsule_L\tAU float Mean ISOVF in posterior limb of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Retrolenticular_part_of_internal_capsule_R\tAU float Mean ISOVF in retrolenticular part of internal capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Retrolenticular_part_of_internal_capsule_L\tAU float Mean ISOVF in retrolenticular part of internal capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Anterior_corona_radiata_R\tAU float Mean ISOVF in anterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Anterior_corona_radiata_L\tAU float Mean ISOVF in anterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_corona_radiata_R\tAU float Mean ISOVF in superior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_corona_radiata_L\tAU float Mean ISOVF in superior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Posterior_corona_radiata_R\tAU float Mean ISOVF in posterior corona radiata (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Posterior_corona_radiata_L\tAU float Mean ISOVF in posterior corona radiata (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Posterior_thalamic_radiation_R\tAU float Mean ISOVF in posterior thalamic radiation (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Posterior_thalamic_radiation_L\tAU float Mean ISOVF in posterior thalamic radiation (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Sagittal_stratum_R\tAU float Mean ISOVF in sagittal stratum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Sagittal_stratum_L\tAU float Mean ISOVF in sagittal stratum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_External_capsule_R\tAU float Mean ISOVF in external capsule (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_External_capsule_L\tAU float Mean ISOVF in external capsule (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Cingulum_cingulate_gyrus_R\tAU float Mean ISOVF in cingulum cingulate gyrus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Cingulum_cingulate_gyrus_L\tAU float Mean ISOVF in cingulum cingulate gyrus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Cingulum_hippocampus_R\tAU float Mean ISOVF in cingulum hippocampus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Cingulum_hippocampus_L\tAU float Mean ISOVF in cingulum hippocampus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Fornix_cres+Stria_terminalis_R\tAU float Mean ISOVF in fornix cres+stria terminalis (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Fornix_cres+Stria_terminalis_L\tAU float Mean ISOVF in fornix cres+stria terminalis (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_longitudinal_fasciculus_R\tAU float Mean ISOVF in superior longitudinal fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_longitudinal_fasciculus_L\tAU float Mean ISOVF in superior longitudinal fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_fronto-occipital_fasciculus_R\tAU float Mean ISOVF in superior fronto-occipital fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Superior_fronto-occipital_fasciculus_L\tAU float Mean ISOVF in superior fronto-occipital fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Uncinate_fasciculus_R\tAU float Mean ISOVF in uncinate fasciculus (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Uncinate_fasciculus_L\tAU float Mean ISOVF in uncinate fasciculus (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Tapetum_R\tAU float Mean ISOVF in tapetum (right) on FA skeleton (from dMRI data)
+     IDP_dMRI_TBSS_ISOVF_Tapetum_L\tAU float Mean ISOVF in tapetum (left) on FA skeleton (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ac AU float Weighted-mean FA in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_af_l AU float Weighted-mean FA in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_af_r AU float Weighted-mean FA in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ar_l AU float Weighted-mean FA in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ar_r AU float Weighted-mean FA in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_atr_l AU float Weighted-mean FA in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_FA_atr_r AU float Weighted-mean FA in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_cbd_l AU float Weighted-mean FA in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_FA_cbd_r AU float Weighted-mean FA in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_cbp_l AU float Weighted-mean FA in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_cbp_r AU float Weighted-mean FA in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_cbt_l AU float Weighted-mean FA in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_cbt_r AU float Weighted-mean FA in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_FA_cst_l AU float Weighted-mean FA in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_FA_cst_r AU float Weighted-mean FA in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_fa_l AU float Weighted-mean FA in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_FA_fa_r AU float Weighted-mean FA in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_fma AU float Weighted-mean FA in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_fmi AU float Weighted-mean FA in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_fx_l AU float Weighted-mean FA in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_fx_r AU float Weighted-mean FA in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ifo_l AU float Weighted-mean FA in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ifo_r AU float Weighted-mean FA in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ilf_l AU float Weighted-mean FA in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_ilf_r AU float Weighted-mean FA in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_mcp AU float Weighted-mean FA in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_mdlf_l AU float Weighted-mean FA in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_mdlf_r AU float Weighted-mean FA in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_or_l AU float Weighted-mean FA in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_or_r AU float Weighted-mean FA in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_slf1_l AU float Weighted-mean FA in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_slf1_r AU float Weighted-mean FA in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_slf2_l AU float Weighted-mean FA in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_slf2_r AU float Weighted-mean FA in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_slf3_l AU float Weighted-mean FA in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_FA_slf3_r AU float Weighted-mean FA in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_str_l AU float Weighted-mean FA in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_str_r AU float Weighted-mean FA in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_uf_l AU float Weighted-mean FA in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_FA_uf_r AU float Weighted-mean FA in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_FA_vof_l AU float Weighted-mean FA in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_MD_vof_r AU float Weighted-mean MD in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ac AU float Weighted-mean MD in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_af_l AU float Weighted-mean MD in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_af_r AU float Weighted-mean MD in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ar_l AU float Weighted-mean MD in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ar_r AU float Weighted-mean MD in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_atr_l AU float Weighted-mean MD in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_MD_atr_r AU float Weighted-mean MD in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_cbd_l AU float Weighted-mean MD in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_MD_cbd_r AU float Weighted-mean MD in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_cbp_l AU float Weighted-mean MD in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_cbp_r AU float Weighted-mean MD in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_cbt_l AU float Weighted-mean MD in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_cbt_r AU float Weighted-mean MD in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_MD_cst_l AU float Weighted-mean MD in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_MD_cst_r AU float Weighted-mean MD in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_fa_l AU float Weighted-mean MD in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_MD_fa_r AU float Weighted-mean MD in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_fma AU float Weighted-mean MD in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_fmi AU float Weighted-mean MD in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_fx_l AU float Weighted-mean MD in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_fx_r AU float Weighted-mean MD in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ifo_l AU float Weighted-mean MD in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ifo_r AU float Weighted-mean MD in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ilf_l AU float Weighted-mean MD in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_ilf_r AU float Weighted-mean MD in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_mcp AU float Weighted-mean MD in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_mdlf_l AU float Weighted-mean MD in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_mdlf_r AU float Weighted-mean MD in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_or_l AU float Weighted-mean MD in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_or_r AU float Weighted-mean MD in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_slf1_l AU float Weighted-mean MD in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_slf1_r AU float Weighted-mean MD in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_slf2_l AU float Weighted-mean MD in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_slf2_r AU float Weighted-mean MD in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_slf3_l AU float Weighted-mean MD in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_MD_slf3_r AU float Weighted-mean MD in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_str_l AU float Weighted-mean MD in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_str_r AU float Weighted-mean MD in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_uf_l AU float Weighted-mean MD in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MD_uf_r AU float Weighted-mean MD in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_MD_vof_l AU float Weighted-mean MD in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_MD_vof_r AU float Weighted-mean MD in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ac AU float Weighted-mean MO in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_af_l AU float Weighted-mean MO in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_af_r AU float Weighted-mean MO in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ar_l AU float Weighted-mean MO in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ar_r AU float Weighted-mean MO in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_atr_l AU float Weighted-mean MO in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_MO_atr_r AU float Weighted-mean MO in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_cbd_l AU float Weighted-mean MO in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_MO_cbd_r AU float Weighted-mean MO in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_cbp_l AU float Weighted-mean MO in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_cbp_r AU float Weighted-mean MO in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_cbt_l AU float Weighted-mean MO in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_cbt_r AU float Weighted-mean MO in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_MO_cst_l AU float Weighted-mean MO in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_MO_cst_r AU float Weighted-mean MO in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_fa_l AU float Weighted-mean MO in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_MO_fa_r AU float Weighted-mean MO in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_fma AU float Weighted-mean MO in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_fmi AU float Weighted-mean MO in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_fx_l AU float Weighted-mean MO in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_fx_r AU float Weighted-mean MO in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ifo_l AU float Weighted-mean MO in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ifo_r AU float Weighted-mean MO in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ilf_l AU float Weighted-mean MO in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_ilf_r AU float Weighted-mean MO in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_mcp AU float Weighted-mean MO in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_mdlf_l AU float Weighted-mean MO in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_mdlf_r AU float Weighted-mean MO in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_or_l AU float Weighted-mean MO in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_or_r AU float Weighted-mean MO in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_slf1_l AU float Weighted-mean MO in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_slf1_r AU float Weighted-mean MO in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_slf2_l AU float Weighted-mean MO in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_slf2_r AU float Weighted-mean MO in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_slf3_l AU float Weighted-mean MO in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_MO_slf3_r AU float Weighted-mean MO in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_str_l AU float Weighted-mean MO in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_str_r AU float Weighted-mean MO in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_uf_l AU float Weighted-mean MO in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_MO_uf_r AU float Weighted-mean MO in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_MO_vof_l AU float Weighted-mean MO in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_MO_vof_r AU float Weighted-mean MO in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ac AU float Weighted-mean L1 in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_af_l AU float Weighted-mean L1 in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_af_r AU float Weighted-mean L1 in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ar_l AU float Weighted-mean L1 in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ar_r AU float Weighted-mean L1 in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_atr_l AU float Weighted-mean L1 in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_L1_atr_r AU float Weighted-mean L1 in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_cbd_l AU float Weighted-mean L1 in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_L1_cbd_r AU float Weighted-mean L1 in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_cbp_l AU float Weighted-mean L1 in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_cbp_r AU float Weighted-mean L1 in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_cbt_l AU float Weighted-mean L1 in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_cbt_r AU float Weighted-mean L1 in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_L1_cst_l AU float Weighted-mean L1 in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_L1_cst_r AU float Weighted-mean L1 in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_fa_l AU float Weighted-mean L1 in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_L1_fa_r AU float Weighted-mean L1 in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_fma AU float Weighted-mean L1 in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_fmi AU float Weighted-mean L1 in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_fx_l AU float Weighted-mean L1 in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_fx_r AU float Weighted-mean L1 in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ifo_l AU float Weighted-mean L1 in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ifo_r AU float Weighted-mean L1 in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ilf_l AU float Weighted-mean L1 in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_ilf_r AU float Weighted-mean L1 in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_mcp AU float Weighted-mean L1 in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_mdlf_l AU float Weighted-mean L1 in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_mdlf_r AU float Weighted-mean L1 in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_or_l AU float Weighted-mean L1 in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_or_r AU float Weighted-mean L1 in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_slf1_l AU float Weighted-mean L1 in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_slf1_r AU float Weighted-mean L1 in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_slf2_l AU float Weighted-mean L1 in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_slf2_r AU float Weighted-mean L1 in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_slf3_l AU float Weighted-mean L1 in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_L1_slf3_r AU float Weighted-mean L1 in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_str_l AU float Weighted-mean L1 in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_str_r AU float Weighted-mean L1 in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_uf_l AU float Weighted-mean L1 in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L1_uf_r AU float Weighted-mean L1 in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_L1_vof_l AU float Weighted-mean L1 in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_L1_vof_r AU float Weighted-mean L1 in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ac AU float Weighted-mean L2 in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_af_l AU float Weighted-mean L2 in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_af_r AU float Weighted-mean L2 in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ar_l AU float Weighted-mean L2 in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ar_r AU float Weighted-mean L2 in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_atr_l AU float Weighted-mean L2 in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_L2_atr_r AU float Weighted-mean L2 in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_cbd_l AU float Weighted-mean L2 in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_L2_cbd_r AU float Weighted-mean L2 in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_cbp_l AU float Weighted-mean L2 in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_cbp_r AU float Weighted-mean L2 in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_cbt_l AU float Weighted-mean L2 in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_cbt_r AU float Weighted-mean L2 in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_L2_cst_l AU float Weighted-mean L2 in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_L2_cst_r AU float Weighted-mean L2 in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_fa_l AU float Weighted-mean L2 in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_L2_fa_r AU float Weighted-mean L2 in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_fma AU float Weighted-mean L2 in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_fmi AU float Weighted-mean L2 in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_fx_l AU float Weighted-mean L2 in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_fx_r AU float Weighted-mean L2 in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ifo_l AU float Weighted-mean L2 in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ifo_r AU float Weighted-mean L2 in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ilf_l AU float Weighted-mean L2 in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_ilf_r AU float Weighted-mean L2 in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_mcp AU float Weighted-mean L2 in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_mdlf_l AU float Weighted-mean L2 in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_mdlf_r AU float Weighted-mean L2 in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_or_l AU float Weighted-mean L2 in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_or_r AU float Weighted-mean L2 in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_slf1_l AU float Weighted-mean L2 in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_slf1_r AU float Weighted-mean L2 in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_slf2_l AU float Weighted-mean L2 in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_slf2_r AU float Weighted-mean L2 in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_slf3_l AU float Weighted-mean L2 in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_L2_slf3_r AU float Weighted-mean L2 in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_str_l AU float Weighted-mean L2 in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_str_r AU float Weighted-mean L2 in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_uf_l AU float Weighted-mean L2 in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L2_uf_r AU float Weighted-mean L2 in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_L2_vof_l AU float Weighted-mean L2 in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_L2_vof_r AU float Weighted-mean L2 in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ac AU float Weighted-mean L3 in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_af_l AU float Weighted-mean L3 in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_af_r AU float Weighted-mean L3 in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ar_l AU float Weighted-mean L3 in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ar_r AU float Weighted-mean L3 in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_atr_l AU float Weighted-mean L3 in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_L3_atr_r AU float Weighted-mean L3 in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_cbd_l AU float Weighted-mean L3 in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_L3_cbd_r AU float Weighted-mean L3 in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_cbp_l AU float Weighted-mean L3 in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_cbp_r AU float Weighted-mean L3 in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_cbt_l AU float Weighted-mean L3 in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_cbt_r AU float Weighted-mean L3 in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_L3_cst_l AU float Weighted-mean L3 in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_L3_cst_r AU float Weighted-mean L3 in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_fa_l AU float Weighted-mean L3 in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_L3_fa_r AU float Weighted-mean L3 in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_fma AU float Weighted-mean L3 in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_fmi AU float Weighted-mean L3 in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_fx_l AU float Weighted-mean L3 in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_fx_r AU float Weighted-mean L3 in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ifo_l AU float Weighted-mean L3 in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ifo_r AU float Weighted-mean L3 in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ilf_l AU float Weighted-mean L3 in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_ilf_r AU float Weighted-mean L3 in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_mcp AU float Weighted-mean L3 in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_mdlf_l AU float Weighted-mean L3 in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_mdlf_r AU float Weighted-mean L3 in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_or_l AU float Weighted-mean L3 in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_or_r AU float Weighted-mean L3 in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_slf1_l AU float Weighted-mean L3 in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_slf1_r AU float Weighted-mean L3 in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_slf2_l AU float Weighted-mean L3 in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_slf2_r AU float Weighted-mean L3 in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_slf3_l AU float Weighted-mean L3 in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_L3_slf3_r AU float Weighted-mean L3 in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_str_l AU float Weighted-mean L3 in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_str_r AU float Weighted-mean L3 in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_uf_l AU float Weighted-mean L3 in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_L3_uf_r AU float Weighted-mean L3 in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_L3_vof_l AU float Weighted-mean L3 in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_L3_vof_r AU float Weighted-mean L3 in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ac AU float Weighted-mean ICVF in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_af_l AU float Weighted-mean ICVF in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_af_r AU float Weighted-mean ICVF in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ar_l AU float Weighted-mean ICVF in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ar_r AU float Weighted-mean ICVF in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_atr_l AU float Weighted-mean ICVF in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_ICVF_atr_r AU float Weighted-mean ICVF in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_cbd_l AU float Weighted-mean ICVF in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_ICVF_cbd_r AU float Weighted-mean ICVF in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_cbp_l AU float Weighted-mean ICVF in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_cbp_r AU float Weighted-mean ICVF in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_cbt_l AU float Weighted-mean ICVF in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_cbt_r AU float Weighted-mean ICVF in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_ICVF_cst_l AU float Weighted-mean ICVF in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_ICVF_cst_r AU float Weighted-mean ICVF in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_fa_l AU float Weighted-mean ICVF in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_ICVF_fa_r AU float Weighted-mean ICVF in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_fma AU float Weighted-mean ICVF in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_fmi AU float Weighted-mean ICVF in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_fx_l AU float Weighted-mean ICVF in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_fx_r AU float Weighted-mean ICVF in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ifo_l AU float Weighted-mean ICVF in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ifo_r AU float Weighted-mean ICVF in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ilf_l AU float Weighted-mean ICVF in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_ilf_r AU float Weighted-mean ICVF in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_mcp AU float Weighted-mean ICVF in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_mdlf_l AU float Weighted-mean ICVF in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_mdlf_r AU float Weighted-mean ICVF in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_or_l AU float Weighted-mean ICVF in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_or_r AU float Weighted-mean ICVF in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_slf1_l AU float Weighted-mean ICVF in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_slf1_r AU float Weighted-mean ICVF in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_slf2_l AU float Weighted-mean ICVF in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_slf2_r AU float Weighted-mean ICVF in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_slf3_l AU float Weighted-mean ICVF in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_ICVF_slf3_r AU float Weighted-mean ICVF in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_str_l AU float Weighted-mean ICVF in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_str_r AU float Weighted-mean ICVF in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_uf_l AU float Weighted-mean ICVF in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ICVF_uf_r AU float Weighted-mean ICVF in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_ICVF_vof_l AU float Weighted-mean ICVF in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_ICVF_vof_r AU float Weighted-mean ICVF in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ac AU float Weighted-mean OD in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_af_l AU float Weighted-mean OD in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_af_r AU float Weighted-mean OD in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ar_l AU float Weighted-mean OD in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ar_r AU float Weighted-mean OD in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_atr_l AU float Weighted-mean OD in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_OD_atr_r AU float Weighted-mean OD in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_cbd_l AU float Weighted-mean OD in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_OD_cbd_r AU float Weighted-mean OD in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_cbp_l AU float Weighted-mean OD in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_cbp_r AU float Weighted-mean OD in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_cbt_l AU float Weighted-mean OD in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_cbt_r AU float Weighted-mean OD in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_OD_cst_l AU float Weighted-mean OD in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_OD_cst_r AU float Weighted-mean OD in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_fa_l AU float Weighted-mean OD in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_OD_fa_r AU float Weighted-mean OD in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_fma AU float Weighted-mean OD in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_fmi AU float Weighted-mean OD in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_fx_l AU float Weighted-mean OD in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_fx_r AU float Weighted-mean OD in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ifo_l AU float Weighted-mean OD in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ifo_r AU float Weighted-mean OD in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ilf_l AU float Weighted-mean OD in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_ilf_r AU float Weighted-mean OD in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_mcp AU float Weighted-mean OD in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_mdlf_l AU float Weighted-mean OD in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_mdlf_r AU float Weighted-mean OD in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_or_l AU float Weighted-mean OD in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_or_r AU float Weighted-mean OD in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_slf1_l AU float Weighted-mean OD in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_slf1_r AU float Weighted-mean OD in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_slf2_l AU float Weighted-mean OD in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_slf2_r AU float Weighted-mean OD in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_slf3_l AU float Weighted-mean OD in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_OD_slf3_r AU float Weighted-mean OD in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_str_l AU float Weighted-mean OD in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_str_r AU float Weighted-mean OD in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_uf_l AU float Weighted-mean OD in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_OD_uf_r AU float Weighted-mean OD in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_OD_vof_l AU float Weighted-mean OD in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_OD_vof_r AU float Weighted-mean OD in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ac AU float Weighted-mean ISOVF in tract Anterior Commissure (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_af_l AU float Weighted-mean ISOVF in tract left Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_af_r AU float Weighted-mean ISOVF in tract right Arcuate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ar_l AU float Weighted-mean ISOVF in tract left Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ar_r AU float Weighted-mean ISOVF in tract right Acoustic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_atr_l AU float Weighted-mean ISOVF in tract left Anterior Thalamic Radiation (from dMRI data
+     IDP_dMRI_ProbtrackX_ISOVF_atr_r AU float Weighted-mean ISOVF in tract right Anterior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_cbd_l AU float Weighted-mean ISOVF in tract left dorsal part of cingulum (from dMRI data
+     IDP_dMRI_ProbtrackX_ISOVF_cbd_r AU float Weighted-mean ISOVF in tract right dorsal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_cbp_l AU float Weighted-mean ISOVF in tract left peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_cbp_r AU float Weighted-mean ISOVF in tract right peri-genual part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_cbt_l AU float Weighted-mean ISOVF in tract left temporal part of cingulum (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_cbt_r AU float Weighted-mean ISOVF in tract right temporal part of cingulum (from dMRI d
+     IDP_dMRI_ProbtrackX_ISOVF_cst_l AU float Weighted-mean ISOVF in tract left Corticospinal Tract (from dMRI)
+     IDP_dMRI_ProbtrackX_ISOVF_cst_r AU float Weighted-mean ISOVF in tract right Corticospinal Tract (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_fa_l AU float Weighted-mean ISOVF in tract left Frontal Aslant fasciculus (from dMRI data
+     IDP_dMRI_ProbtrackX_ISOVF_fa_r AU float Weighted-mean ISOVF in tract right Frontal Aslant (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_fma AU float Weighted-mean ISOVF in tract Forceps Major (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_fmi AU float Weighted-mean ISOVF in tract Forceps Minor (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_fx_l AU float Weighted-mean ISOVF in tract left Fornix (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_fx_r AU float Weighted-mean ISOVF in tract right Fornix(from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ifo_l AU float Weighted-mean ISOVF in tract left Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ifo_r AU float Weighted-mean ISOVF in tract right Inferior Fronto-Occipital Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ilf_l AU float Weighted-mean ISOVF in tract left Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_ilf_r AU float Weighted-mean ISOVF in tract right Inferior Longitudinal Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_mcp AU float Weighted-mean ISOVF in tract Middle Cerebellar Peduncle (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_mdlf_l AU float Weighted-mean ISOVF in tract left Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_mdlf_r AU float Weighted-mean ISOVF in tract right Middle Longitudinal Fasciculuc (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_or_l AU float Weighted-mean ISOVF in tract left Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_or_r AU float Weighted-mean ISOVF in tract right Optic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_slf1_l AU float Weighted-mean ISOVF in tract left Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_slf1_r AU float Weighted-mean ISOVF in tract right Superior Longitudinal Fasciculus 1 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_slf2_l AU float Weighted-mean ISOVF in tract left Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_slf2_r AU float Weighted-mean ISOVF in tract right Superior Longitudinal Fasciculus 2 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_slf3_l AU float Weighted-mean ISOVF in tract left Superior Longitudinal Fasciculus 3 (from dMRI data
+     IDP_dMRI_ProbtrackX_ISOVF_slf3_r AU float Weighted-mean ISOVF in tract right Superior Longitudinal Fasciculus 3 (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_str_l AU float Weighted-mean ISOVF in tract left Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_str_r AU float Weighted-mean ISOVF in tract right Superior Thalamic Radiation (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_uf_l AU float Weighted-mean ISOVF in tract left Uncinate Fasciculus (from dMRI data)
+     IDP_dMRI_ProbtrackX_ISOVF_uf_r AU float Weighted-mean ISOVF in tract right Uncinate Fasciculus (from dMRI d
+     IDP_dMRI_ProbtrackX_ISOVF_vof_l AU float Weighted-mean ISOVF in tract left Vertical Occipital Fasciculus (from dMRI)
+     IDP_dMRI_ProbtrackX_ISOVF_vof_r AU float Weighted-mean ISOVF in tract right Vertical Occipital Fasciculus (from dMRI data)
+     IDP_T1_GM_parcellation_L_Front_Pole_volume\tmm3\tfloat\tVolume of grey matter in Left Frontal Pole (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Front_Pole_volume\tmm3\tfloat\tVolume of grey matter in Right Frontal Pole (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Insula_volume\tmm3\tfloat\tVolume of grey matter in Left Insular Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Insula_volume\tmm3\tfloat\tVolume of grey matter in Right Insular Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Sup_Front_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Superior Frontal Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Sup_Front_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Superior Frontal Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Mid_Front_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Middle Frontal Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Mid_Front_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Middle Frontal Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Inf_Front_Gyr_pars_triangularis_volume\tmm3\tfloat\tVolume of grey matter in Left Inferior Frontal Gyrus, pars triangularis (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Inf_Front_Gyr_pars_triangularis_volume\tmm3\tfloat\tVolume of grey matter in Right Inferior Frontal Gyrus, pars triangularis (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Inf_Front_Gyr_pars_opercularis_volume\tmm3\tfloat\tVolume of grey matter in Left Inferior Frontal Gyrus, pars opercularis (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Inf_Front_Gyr_pars_opercularis_volume\tmm3\tfloat\tVolume of grey matter in Right Inferior Frontal Gyrus, pars opercularis (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Precentral_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Precentral Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Precentral_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Precentral Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Temp_Pole_volume\tmm3\tfloat\tVolume of grey matter in Left Temporal Pole (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Temp_Pole_volume\tmm3\tfloat\tVolume of grey matter in Right Temporal Pole (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Sup_Temp_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Superior Temporal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Sup_Temp_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Superior Temporal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Sup_Temp_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Left Superior Temporal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Sup_Temp_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Right Superior Temporal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Mid_Temp_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Middle Temporal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Mid_Temp_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Middle Temporal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Mid_Temp_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Left Middle Temporal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Mid_Temp_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Right Middle Temporal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Mid_Temp_Gyr_temporoOcc_part_volume\tmm3\tfloat\tVolume of grey matter in Left Middle Temporal Gyrus, temporooccipital part (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Mid_Temp_Gyr_temporoOcc_part_volume\tmm3\tfloat\tVolume of grey matter in Right Middle Temporal Gyrus, temporooccipital part (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Inf_Temp_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Inferior Temporal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Inf_Temp_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Inferior Temporal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Inf_Temp_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Left Inferior Temporal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Inf_Temp_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Right Inferior Temporal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Inf_Temp_Gyr_temporoOcc_part_volume\tmm3\tfloat\tVolume of grey matter in Left Inferior Temporal Gyrus, temporooccipital part (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Inf_Temp_Gyr_temporoOcc_part_volume\tmm3\tfloat\tVolume of grey matter in Right Inferior Temporal Gyrus, temporooccipital part (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Postcentral_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Postcentral Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Postcentral_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Postcentral Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Sup_Parietal_Lobule_volume\tmm3\tfloat\tVolume of grey matter in Left Superior Parietal Lobule (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Sup_Parietal_Lobule_volume\tmm3\tfloat\tVolume of grey matter in Right Superior Parietal Lobule (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Supramarginal_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Supramarginal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Supramarginal_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Supramarginal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Supramarginal_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Left Supramarginal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Supramarginal_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Right Supramarginal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Angular_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Angular Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Angular_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Angular Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Lateral_Occ_Sup_volume\tmm3\tfloat\tVolume of grey matter in Left Lateral Occipital Cortex, superior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Lateral_Occ_Sup_volume\tmm3\tfloat\tVolume of grey matter in Right Lateral Occipital Cortex, superior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Lateral_Occ_Inf_volume\tmm3\tfloat\tVolume of grey matter in Left Lateral Occipital Cortex, inferior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Lateral_Occ_Inf_volume\tmm3\tfloat\tVolume of grey matter in Right Lateral Occipital Cortex, inferior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Intracalcarine_volume\tmm3\tfloat\tVolume of grey matter in Left Intracalcarine Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Intracalcarine_volume\tmm3\tfloat\tVolume of grey matter in Right Intracalcarine Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Front_Medial_volume\tmm3\tfloat\tVolume of grey matter in Left Frontal Medial Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Front_Medial_volume\tmm3\tfloat\tVolume of grey matter in Right Frontal Medial Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Juxtapositional_Lobule_volume\tmm3\tfloat\tVolume of grey matter in Left Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex) (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Juxtapositional_Lobule_volume\tmm3\tfloat\tVolume of grey matter in Right Juxtapositional Lobule Cortex (formerly Supplementary Motor Cortex) (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Subcallosal_volume\tmm3\tfloat\tVolume of grey matter in Left Subcallosal Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Subcallosal_volume\tmm3\tfloat\tVolume of grey matter in Right Subcallosal Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Paracingulate_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Paracingulate Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Paracingulate_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Paracingulate Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Cingulate_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Cingulate Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Cingulate_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Cingulate Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Cingulate_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Left Cingulate Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Cingulate_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Right Cingulate Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Precuneous_volume\tmm3\tfloat\tVolume of grey matter in Left Precuneous Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Precuneous_volume\tmm3\tfloat\tVolume of grey matter in Right Precuneous Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Cuneal_volume\tmm3\tfloat\tVolume of grey matter in Left Cuneal Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Cuneal_volume\tmm3\tfloat\tVolume of grey matter in Right Cuneal Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Front_Orbital_volume\tmm3\tfloat\tVolume of grey matter in Left Frontal Orbital Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Front_Orbital_volume\tmm3\tfloat\tVolume of grey matter in Right Frontal Orbital Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Parahippocampal_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Parahippocampal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Parahippocampal_Gyr_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Parahippocampal Gyrus, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Parahippocampal_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Left Parahippocampal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Parahippocampal_Gyr_post_volume\tmm3\tfloat\tVolume of grey matter in Right Parahippocampal Gyrus, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Lingual_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Lingual Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Lingual_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Lingual Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Temp_Fusiform_ant_volume\tmm3\tfloat\tVolume of grey matter in Left Temporal Fusiform Cortex, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Temp_Fusiform_ant_volume\tmm3\tfloat\tVolume of grey matter in Right Temporal Fusiform Cortex, anterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Temp_Fusiform_post_volume\tmm3\tfloat\tVolume of grey matter in Left Temporal Fusiform Cortex, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Temp_Fusiform_post_volume\tmm3\tfloat\tVolume of grey matter in Right Temporal Fusiform Cortex, posterior division (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Temp_Occ_Fusiform_volume\tmm3\tfloat\tVolume of grey matter in Left Temporal Occipital Fusiform Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Temp_Occ_Fusiform_volume\tmm3\tfloat\tVolume of grey matter in Right Temporal Occipital Fusiform Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Occ_Fusiform_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Occipital Fusiform Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Occ_Fusiform_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Occipital Fusiform Gyrus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Front_Operculum_volume\tmm3\tfloat\tVolume of grey matter in Left Frontal Operculum Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Front_Operculum_volume\tmm3\tfloat\tVolume of grey matter in Right Frontal Operculum Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Central_Opercular_volume\tmm3\tfloat\tVolume of grey matter in Left Central Opercular Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Central_Opercular_volume\tmm3\tfloat\tVolume of grey matter in Right Central Opercular Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Parietal_Operculum_volume\tmm3\tfloat\tVolume of grey matter in Left Parietal Operculum Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Parietal_Operculum_volume\tmm3\tfloat\tVolume of grey matter in Right Parietal Operculum Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Planum_Polare_volume\tmm3\tfloat\tVolume of grey matter in Left Planum Polare (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Planum_Polare_volume\tmm3\tfloat\tVolume of grey matter in Right Planum Polare (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Heschl_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Left Heschl's Gyrus (includes H1 and H2) (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Heschl_Gyr_volume\tmm3\tfloat\tVolume of grey matter in Right Heschl's Gyrus (includes H1 and H2) (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Planum_Tempe_volume\tmm3\tfloat\tVolume of grey matter in Left Planum Temporale (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Planum_Tempe_volume\tmm3\tfloat\tVolume of grey matter in Right Planum Temporale (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Supracalcarine_volume\tmm3\tfloat\tVolume of grey matter in Left Supracalcarine Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Supracalcarine_volume\tmm3\tfloat\tVolume of grey matter in Right Supracalcarine Cortex (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Occ_Pole_volume\tmm3\tfloat\tVolume of grey matter in Left Occipital Pole (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Occ_Pole_volume\tmm3\tfloat\tVolume of grey matter in Right Occipital Pole (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Thalamus_volume\tmm3\tfloat\tVolume of grey matter in Left Thalamus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Thalamus_volume\tmm3\tfloat\tVolume of grey matter in Right Thalamus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Caudate_volume\tmm3\tfloat\tVolume of grey matter in Left Caudate (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Caudate_volume\tmm3\tfloat\tVolume of grey matter in Right Caudate (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Putamen_volume\tmm3\tfloat\tVolume of grey matter in Left Putamen (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Putamen_volume\tmm3\tfloat\tVolume of grey matter in Right Putamen (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Pallidum_volume\tmm3\tfloat\tVolume of grey matter in Left Pallidum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Pallidum_volume\tmm3\tfloat\tVolume of grey matter in Right Pallidum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Hippocampus_volume\tmm3\tfloat\tVolume of grey matter in Left Hippocampus (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Hippocampus_volume\tmm3\tfloat\tVolume of grey matter in Right Hippocampus (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Amygdala_volume\tmm3\tfloat\tVolume of grey matter in Left Amygdala (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Amygdala_volume\tmm3\tfloat\tVolume of grey matter in Right Amygdala (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Vent_Striatum_volume\tmm3\tfloat\tVolume of grey matter in Left Ventral Striatum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Vent_Striatum_volume\tmm3\tfloat\tVolume of grey matter in Right Ventral Striatum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Brain-Stem_volume\tmm3\tfloat\tVolume of grey matter in Brain-Stem (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_I-IV_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left I-IV Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_I-IV_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right I-IV Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_V_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left V Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_V_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right V Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_VI_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left VI Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_VI_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis VI Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_VI_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right VI Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Crus_I_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left Crus I Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_Crus_I_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis Crus I Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Crus_I_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right Crus I Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_Crus_II_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left Crus II Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_Crus_II_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis Crus II Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_Crus_II_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right Crus II Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_VIIb_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left VIIb Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_VIIb_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis VIIb Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_VIIb_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right VIIb Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_VIIIa_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left VIIIa Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_VIIIa_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis VIIIa Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_VIIIa_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right VIIIa Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_VIIIb_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left VIIIb Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_VIIIb_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis VIIIb Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_VIIIb_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right VIIIb Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_IX_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left IX Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_IX_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis IX Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_IX_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right IX Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_L_X_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Left X Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_Vermis_X_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Vermis X Cerebellum (From T1 brain image) "
+     IDP_T1_GM_parcellation_R_X_Cerebellum_volume\tmm3\tfloat\tVolume of grey matter in Right X Cerebellum (From T1 brain image) "
+     IDP_T2_FLAIR_WMH_volume\tmm3\tfloat\tVolume of White Matter Hyperintensities calculated with BIANCA (from T1 and T2 FLAIR brain image) "
+     bb_IDP_MIST_left_amygdala_volume Volume of left amydala (From T1/T2/dMRI image) "
+     bb_IDP_MIST_left_caudate_accumbens_volume left caudate accumbens Volume of (From T1/T2/dMRI image) "
+     bb_IDP_MIST_left_hippocampus_volume Volume of left hippocampus (From T1/T2/dMRI image)"
+     bb_IDP_MIST_left_pallidum_volume Volume of left pallidum (From T1/T2/dMRI image) "
+     bb_IDP_MIST_left_putamen_volume Volume of left putamen (From T1/T2/dMRI image)"
+     bb_IDP_MIST_left_red_nucleus_volume Volume of left red nucleus (From T1/T2/dMRI image) "
+     bb_IDP_MIST_left_substantia_nigra_volume Volume of left substantia nigra (From T1/T2/dMRI image) "
+     bb_IDP_MIST_left_subthalamic_nucleus_volume Volume of left subthalmic nucleus (From T1/T2/dMRI image) "
+     bb_IDP_MIST_left_thalamus_volume Volume of left thalamus(From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_amygdala_volume Volume of right amydala (From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_caudate_accumbens_volume Volume of right caudate accumbens (From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_hippocampus_volume Volume of right hippocampus (From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_pallidum_volume Volume of right pallidum (From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_putamen_volume Volume of right putamen(From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_red_nucleus_volume Volume of right red nucleus (From T1/T2/dMRI image) "
+     bb_IDP_MIST_ight_substantia_nigra_volume Volume of right substantia nigra (From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_subthalamic_nucleus_volume Volume of subthalmic nucleus (From T1/T2/dMRI image) "
+     bb_IDP_MIST_right_thalamus_volume Volume of right thalamus (From T1/T2/dMRI image) "

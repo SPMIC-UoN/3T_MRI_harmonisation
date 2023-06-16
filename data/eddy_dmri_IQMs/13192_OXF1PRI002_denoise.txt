@@ -1,0 +1,2 @@
+session modality qc_cnr_avg_1 qc_cnr_avg_2 qc_cnr_avg_3 qc_cnr_std_1 qc_cnr_std_2 qc_cnr_std_3 qc_outliers_b_1 qc_outliers_b_2 qc_outliers_pe_1 qc_mot_abs qc_mot_rel qc_outliers_tot
+13192_OXF1PRI002_denoise dmri 48.2400016784668 2.890000104904175 3.990000009536743 37.27000045776367 2.4000000953674316 2.5199999809265137 1.1944444444444444 0.0 0.5687830687830688 0.28 0.2 0.5972222222222222

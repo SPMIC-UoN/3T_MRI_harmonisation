@@ -1,0 +1,2 @@
+session modality qc_cnr_avg_1 qc_cnr_avg_2 qc_cnr_avg_3 qc_cnr_std_1 qc_cnr_std_2 qc_cnr_std_3 qc_outliers_b_1 qc_outliers_b_2 qc_outliers_pe_1 qc_mot_abs qc_mot_rel qc_outliers_tot
+13305_NOT2ING001 dmri 24.09000015258789 0.7099999785423279 0.8100000023841858 16.639999389648438 0.46000000834465027 0.46000000834465027 0.0 0.0 0.0 0.52 0.3 0.0
